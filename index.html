@@ -5,143 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Affordable IT Support & Cybersecurity in Nairobi | TechNovaphy Solutions</title>
   <meta name="description" content="Nairobi-based IT support, custom software development, and cybersecurity services for small and growing businesses in Kenya and worldwide.">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<!-- ================= NAVIGATION ================= -->
 <nav class="navbar">
   <div class="container nav-flex">
-    <h1 class="logo">TNPS</h1>
-    <ul class="nav-links">
+    <h1 class="logo">TN<span>PS</span></h1>
+    
+    <ul class="nav-links" id="nav-links">
       <li><a href="#">Home</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button id="theme-toggle" class="theme-btn">🌙</button>
+
+    <div class="nav-btns">
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+        <div class="menu-icon" id="menu-icon">
+            <i class="fas fa-bars"></i>
+        </div>
+    </div>
   </div>
 </nav>
 
-<!-- ================= HERO SECTION ================= -->
-<section class="hero" style="background-image: url('images/hardware-bg.jpg');">
-  <div class="hero-overlay">
-    <div class="container hero-content">
-      <h1>Reliable IT Support, Custom Software & Cybersecurity</h1>
-      <p>Helping growing businesses in Nairobi, across Kenya, and worldwide reduce downtime, streamline systems, and safeguard their data — all at affordable pricing.</p>
-      <p><strong>Professional solutions, without enterprise-level costs.</strong></p>
+<section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hardware-bg.jpg');">
+  <div class="container hero-content">
+      <span class="badge">Trusted Tech Partners in Kenya</span>
+      <h1>Enterprise-Grade IT <br> Without the Enterprise Cost</h1>
+      <p>Helping growing businesses in Nairobi and worldwide reduce downtime, streamline systems, and safeguard data with custom software and elite cybersecurity.</p>
+      
       <div class="hero-buttons">
         <a href="#contact" class="btn primary">Request Free Consultation</a>
-        <a href="#services" class="btn secondary">Explore Our Services</a>
+        <a href="#services" class="btn secondary">View Our Solutions</a>
       </div>
-    </div>
   </div>
 </section>
 
-<!-- ================= PORTFOLIO ================= -->
+<section class="stats-bar">
+    <div class="container stats-flex">
+        <div class="stat-item">
+            <h3>99.9%</h3>
+            <p>System Uptime</p>
+        </div>
+        <div class="stat-item">
+            <h3>24/7</h3>
+            <p>Threat Monitoring</p>
+        </div>
+        <div class="stat-item">
+            <h3>1-Hr</h3>
+            <p>Typical Response</p>
+        </div>
+    </div>
+</section>
+
 <section id="portfolio" class="section light">
   <div class="container">
-    <h2 class="section-title">Our Portfolio</h2>
+    <h2 class="section-title">Case Studies</h2>
     <div class="portfolio-grid">
       <div class="portfolio-card">
-        <h3>E-Commerce Automation</h3>
-        <p>Custom inventory system reducing manual work by 60%.</p>
+        <div class="card-tag">Automation</div>
+        <h3>E-Commerce Systems</h3>
+        <p>Custom inventory automation reducing manual labor by 60%.</p>
       </div>
       <div class="portfolio-card">
-        <h3>Cyber Defense Setup</h3>
-        <p>Firewall & encryption implementation for financial firm.</p>
+        <div class="card-tag">Security</div>
+        <h3>Cyber Defense</h3>
+        <p>Advanced firewall & encryption for Nairobi financial firms.</p>
       </div>
       <div class="portfolio-card">
+        <div class="card-tag">Software</div>
         <h3>Legacy Migration</h3>
-        <p>Inventory Management Systems</p>
+        <p>Modernizing Inventory Management for cloud scalability.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= SERVICES ================= -->
 <section id="services" class="section">
   <div class="container">
-    <h2 class="section-title">Our Services</h2>
+    <h2 class="section-title">Core Services</h2>
     <div class="cards">
       <div class="card">
-        <h3>IT Support</h3>
-        <p>Remote & on-site troubleshooting and cloud configuration.</p>
+        <i class="fas fa-headset service-icon"></i>
+        <h3>Managed IT Support</h3>
+        <p>Remote & on-site troubleshooting and cloud configuration for modern teams.</p>
       </div>
       <div class="card">
-        <h3>Software Development</h3>
-        <p>Custom web apps, automation & dashboards.</p>
+        <i class="fas fa-code service-icon"></i>
+        <h3>Custom Software</h3>
+        <p>Bespoke web apps, business automation, and data dashboards.</p>
       </div>
       <div class="card">
+        <i class="fas fa-shield-halved service-icon"></i>
         <h3>Cybersecurity</h3>
-        <p>24/7 threat detection, malware removal & protection.</p>
+        <p>24/7 threat detection, malware removal, and end-to-end data protection.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= PRICING ================= -->
 <section id="pricing" class="section light">
   <div class="container">
-    <h2 class="section-title">Pricing</h2>
+    <h2 class="section-title">Transparent Pricing</h2>
     <div class="cards">
-      <div class="card">
+      <div class="card pricing-card">
         <h3>Starter</h3>
-        <p>$80 / Month</p>
+        <div class="price">$80<span>/mo</span></div>
+        <p>Ideal for small offices needing basic support & security.</p>
+        <a href="#contact" class="btn-outline">Choose Plan</a>
       </div>
-      <div class="card">
+      <div class="card pricing-card featured">
+        <div class="popular">Most Popular</div>
         <h3>Growth</h3>
-        <p>$150 / Month</p>
+        <div class="price">$150<span>/mo</span></div>
+        <p>Priority support and advanced threat monitoring.</p>
+        <a href="#contact" class="btn primary">Choose Plan</a>
       </div>
-      <div class="card">
-        <h3>Custom Software</h3>
-        <p>From $300</p>
+      <div class="card pricing-card">
+        <h3>Custom</h3>
+        <div class="price">From $300</div>
+        <p>For custom dev projects and full-scale migrations.</p>
+        <a href="#contact" class="btn-outline">Get Quote</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= CONTACT ================= -->
 <section id="contact" class="section">
-  <div class="container">
-    <h2 class="section-title">Contact Us</h2>
+  <div class="container contact-wrapper">
+    <div class="contact-info">
+        <h2 class="section-title align-left">Let’s Talk Strategy</h2>
+        <p>Ready to secure your business? Send us a message and we'll reply within 1 business hour.</p>
+        
+        <div class="contact-item">
+            <i class="fas fa-phone"></i>
+            <div>
+                <strong>Phone</strong>
+                <a href="tel:+254799269573">0799 269 573</a>
+            </div>
+        </div>
+        <div class="contact-item">
+            <i class="fas fa-envelope"></i>
+            <div>
+                <strong>Email</strong>
+                <a href="mailto:technovaphysolutions3@gmail.com">technovaphysolutions3@gmail.com</a>
+            </div>
+        </div>
+    </div>
 
-    <form action="https://formspree.io/f/xzdajgyz" method="POST" class="contact-form">
+    <form action="https://formspree.io/f/xzdajgyz" method="POST" class="contact-form card">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="email" name="email" placeholder="Email Address" required>
       <textarea name="message" placeholder="How can we help your business today?" rows="5" required></textarea>
       <button type="submit" class="btn primary">Send Message</button>
     </form>
-
-    <div class="contact-info-box">
-      <p><strong>Phone:</strong> <a href="tel:+254799269573">0799 269 573</a></p>
-      <p><strong>Email:</strong> <a href="mailto:technovaphysolutions3@gmail.com?subject=Business%20Inquiry">technovaphysolutions3@gmail.com</a></p>
-      <p><em>Available for local (Nairobi).</em></p>
-    </div>
   </div>
 </section>
 
-<!-- ================= WHATSAPP FLOAT ================= -->
 <a href="https://wa.me/254799269573?text=Hi%20TechNovaphy%2C%20I%20am%20interested%20in%20your%20services."
    class="whatsapp-float"
    target="_blank"
    rel="noopener">
-   Chat on WhatsApp
+   <i class="fab fa-whatsapp"></i> Chat with an Expert
 </a>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-  &copy; 2026 TechNovaphy Solutions. Nairobi, Kenya.
+<footer class="footer">
+  <div class="container">
+      <p>&copy; 2026 TechNovaphy Solutions. Proudly serving Nairobi & Kenya.</p>
+  </div>
 </footer>
 
-<!-- ================= THEME SCRIPT ================= -->
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("theme-toggle");
   const body = document.body;
+  const menuIcon = document.getElementById("menu-icon");
+  const navLinks = document.getElementById("nav-links");
 
+  // Theme Toggle
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     body.classList.add("dark");
@@ -154,8 +200,13 @@ document.addEventListener("DOMContentLoaded", function () {
     localStorage.setItem("theme", isDark ? "dark" : "light");
     toggle.textContent = isDark ? "☀️" : "🌙";
   });
+
+  // Mobile Menu Toggle
+  menuIcon.addEventListener("click", function() {
+      navLinks.classList.toggle("active");
+  });
 });
 </script>
 
 </body>
-  </html>
+</html>
