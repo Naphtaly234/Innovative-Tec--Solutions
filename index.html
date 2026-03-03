@@ -18,8 +18,9 @@
     
     <ul class="nav-links" id="nav-links">
       <li><a href="#">Home</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -33,7 +34,7 @@
   </div>
 </nav>
 
-<section class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/hardware-bg.jpg');">
+<section class="hero">
   <div class="container hero-content">
       <span class="badge">Trusted Tech Partners in Kenya</span>
       <h1>Enterprise-Grade IT <br> Without the Enterprise Cost</h1>
@@ -41,7 +42,7 @@
       
       <div class="hero-buttons">
         <a href="#contact" class="btn primary">Request Free Consultation</a>
-        <a href="#services" class="btn secondary">View Our Solutions</a>
+        <a href="#process" class="btn secondary">How We Work</a>
       </div>
   </div>
 </section>
@@ -63,7 +64,58 @@
     </div>
 </section>
 
-<section id="portfolio" class="section light">
+<section id="services" class="section">
+  <div class="container">
+    <h2 class="section-title">Core Services</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="service-icon"><i class="fas fa-headset"></i></div>
+        <h3>Managed IT Support</h3>
+        <p>Remote & on-site troubleshooting and cloud configuration for modern teams.</p>
+      </div>
+      <div class="card">
+        <div class="service-icon"><i class="fas fa-code"></i></div>
+        <h3>Custom Software</h3>
+        <p>Bespoke web apps, business automation, and data dashboards.</p>
+      </div>
+      <div class="card">
+        <div class="service-icon"><i class="fas fa-shield-halved"></i></div>
+        <h3>Cybersecurity</h3>
+        <p>24/7 threat detection, malware removal, and end-to-end data protection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="process" class="section light">
+  <div class="container">
+    <h2 class="section-title">Our 4-Step Process</h2>
+    <div class="process-grid">
+      <div class="process-item">
+        <div class="step-number">01</div>
+        <h3>Discovery</h3>
+        <p>We audit your current systems to find security gaps and inefficiencies.</p>
+      </div>
+      <div class="process-item">
+        <div class="step-number">02</div>
+        <h3>Strategy</h3>
+        <p>We design a custom roadmap that fits your specific business goals and budget.</p>
+      </div>
+      <div class="process-item">
+        <div class="step-number">03</div>
+        <h3>Deployment</h3>
+        <p>Our experts implement solutions with zero disruption to your daily operations.</p>
+      </div>
+      <div class="process-item">
+        <div class="step-number">04</div>
+        <h3>Optimization</h3>
+        <p>Continuous 24/7 monitoring and updates to keep you ahead of tech trends.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="portfolio" class="section">
   <div class="container">
     <h2 class="section-title">Case Studies</h2>
     <div class="portfolio-grid">
@@ -86,30 +138,28 @@
   </div>
 </section>
 
-<section id="services" class="section">
+<section class="section light">
   <div class="container">
-    <h2 class="section-title">Core Services</h2>
-    <div class="cards">
-      <div class="card">
-        <i class="fas fa-headset service-icon"></i>
-        <h3>Managed IT Support</h3>
-        <p>Remote & on-site troubleshooting and cloud configuration for modern teams.</p>
+    <div class="quiz-container card">
+      <h2>Free Security Health Check</h2>
+      <p>Answer these 3 questions to see if your business is at risk.</p>
+      <div id="quiz-content">
+        <div class="quiz-question">
+          <p>1. Do you use Two-Factor Authentication (2FA) on all employee accounts?</p>
+          <button class="quiz-opt" onclick="updateQuiz(0)">Yes</button>
+          <button class="quiz-opt" onclick="updateQuiz(1)">No</button>
+        </div>
       </div>
-      <div class="card">
-        <i class="fas fa-code service-icon"></i>
-        <h3>Custom Software</h3>
-        <p>Bespoke web apps, business automation, and data dashboards.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-shield-halved service-icon"></i>
-        <h3>Cybersecurity</h3>
-        <p>24/7 threat detection, malware removal, and end-to-end data protection.</p>
+      <div id="quiz-result" style="display:none;">
+        <h3>Your Risk Level: <span id="risk-score">High</span></h3>
+        <p id="risk-desc">Your systems may be vulnerable to unauthorized access.</p>
+        <a href="#contact" class="btn primary">Get a Full Security Audit</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="pricing" class="section light">
+<section id="pricing" class="section">
   <div class="container">
     <h2 class="section-title">Transparent Pricing</h2>
     <div class="cards">
@@ -136,7 +186,7 @@
   </div>
 </section>
 
-<section id="contact" class="section">
+<section id="contact" class="section light">
   <div class="container contact-wrapper">
     <div class="contact-info">
         <h2 class="section-title align-left">Let’s Talk Strategy</h2>
@@ -181,13 +231,46 @@
 </footer>
 
 <script>
+// Quiz Algorithm logic
+let riskLevel = 0;
+const questions = [
+  "2. Are your business backups stored offline or in a separate cloud?",
+  "3. Have your employees received cybersecurity awareness training this year?"
+];
+let currentQ = 0;
+
+function updateQuiz(isSafe) {
+  if (isSafe === 1) riskLevel++; 
+  
+  if (currentQ < questions.length) {
+    document.getElementById('quiz-content').innerHTML = `
+      <div class="quiz-question">
+        <p>${questions[currentQ]}</p>
+        <button class="quiz-opt" onclick="updateQuiz(0)">Yes</button>
+        <button class="quiz-opt" onclick="updateQuiz(1)">No</button>
+      </div>`;
+    currentQ++;
+  } else {
+    document.getElementById('quiz-content').style.display = 'none';
+    const resultDiv = document.getElementById('quiz-result');
+    resultDiv.style.display = 'block';
+    const scoreSpan = document.getElementById('risk-score');
+    if (riskLevel >= 2) {
+      scoreSpan.innerText = "CRITICAL";
+      scoreSpan.style.color = "red";
+    } else {
+      scoreSpan.innerText = "MODERATE";
+      scoreSpan.style.color = "orange";
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const toggle = document.getElementById("theme-toggle");
   const body = document.body;
   const menuIcon = document.getElementById("menu-icon");
   const navLinks = document.getElementById("nav-links");
 
-  // Theme Toggle
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme === "dark") {
     body.classList.add("dark");
@@ -201,7 +284,6 @@ document.addEventListener("DOMContentLoaded", function () {
     toggle.textContent = isDark ? "☀️" : "🌙";
   });
 
-  // Mobile Menu Toggle
   menuIcon.addEventListener("click", function() {
       navLinks.classList.toggle("active");
   });
