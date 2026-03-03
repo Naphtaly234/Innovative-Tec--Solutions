@@ -6,98 +6,200 @@
   <title>Affordable IT Support & Cybersecurity in Nairobi | TechNovaphy Solutions</title>
   <meta name="description" content="Nairobi-based IT support, custom software development, and cybersecurity services for small and growing businesses in Kenya and worldwide.">
   <link rel="stylesheet" href="style.css">
+
   <style>
-    /* CSS Fixes for smooth UX */
     html { scroll-behavior: smooth; }
-    
-    /* Sticky Theme Toggle position fix */
-    .nav-flex { display: flex; align-items: center; justify-content: space-between; }
-    
-    /* Floating WhatsApp Button */
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    body.dark {
+      background: #1a1a1a;
+      color: #f4f4f4;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .navbar {
+      background: #0a192f;
+      padding: 15px 0;
+      color: white;
+    }
+
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      margin: 0;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .theme-btn {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    .light {
+      background: #f4f4f4;
+    }
+
+    body.dark .light {
+      background: #2d2d2d;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    body.dark .card {
+      background: #333;
+      border: 1px solid #444;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+
+    .portfolio-card {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    body.dark .portfolio-card {
+      background: #333;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+    }
+
+    .primary {
+      background: #0a192f;
+      color: white;
+    }
+
+    .secondary {
+      background: #0077cc;
+      color: white;
+    }
+
+    .contact-info-box {
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(0,0,0,0.05);
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .contact-info-box a {
+      color: #0077cc;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    body.dark .contact-info-box {
+      background: rgba(255,255,255,0.05);
+    }
+
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background-color: #25d366;
+      background: #25d366;
       color: white;
       padding: 12px 20px;
       border-radius: 50px;
       text-decoration: none;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      z-index: 1000;
       font-weight: bold;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: transform 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-    .whatsapp-float:hover { transform: scale(1.05); }
 
-    /* Dark Mode Utility Class */
-    body.dark { background-color: #1a1a1a; color: #f4f4f4; }
-    body.dark .light { background-color: #2d2d2d; }
-    body.dark .card { background-color: #333; color: white; border: 1px solid #444; }
-
-    /* Portfolio Specific Styles */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      margin-top: 30px;
-    }
-    .portfolio-card {
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-      transition: 0.3s;
-    }
-    body.dark .portfolio-card { background: #333; }
-    .portfolio-card:hover { transform: translateY(-5px); }
-    .contact-info-box {
-      margin-bottom: 30px;
+    footer {
+      background: #0a192f;
+      color: white;
       text-align: center;
       padding: 20px;
-      background: rgba(0,0,0,0.05);
-      border-radius: 8px;
     }
   </style>
 </head>
+
 <body>
 
 <nav class="navbar">
   <div class="container nav-flex">
     <h1 class="logo">TNPS</h1>
     <ul class="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#services">Services</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#services">Services</a></li>
       <li><a href="#pricing">Pricing</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">🌙</button>
+    <button id="theme-toggle" class="theme-btn">🌙</button>
   </div>
 </nav>
-
-<main>
-
-<header class="hero" id="home">
-  <div class="overlay"></div>
-  <div class="hero-box">
-    <h1>TechNovaphy Solutions</h1>
-    <h2>Reliable IT, Custom Software & Cybersecurity</h2>
-    <p>Based in Nairobi, serving Kenya and international clients.</p>
-    <ul class="hero-benefits">
-      <li>🔒 <strong>Stay Secure</strong> — 24/7 automated monitoring</li>
-      <li>⚡ <strong>Operate Smoothly</strong> — 1-hour incident response</li>
-      <li>🚀 <strong>Grow Efficiently</strong> — Custom business systems</li>
-    </ul>
-    <div class="hero-buttons">
-      <a href="#contact" class="btn primary">Free Security Assessment</a>
-      <a href="#services" class="btn secondary">Explore Services</a>
-    </div>
-  </div>
-</header>
 
 <section id="portfolio" class="section light">
   <div class="container">
@@ -105,15 +207,15 @@
     <div class="portfolio-grid">
       <div class="portfolio-card">
         <h3>E-Commerce Automation</h3>
-        <p>Developed a custom inventory management system for a Nairobi retail chain, reducing manual entry by 60%.</p>
+        <p>Custom inventory system reducing manual work by 60%.</p>
       </div>
       <div class="portfolio-card">
         <h3>Cyber Defense Setup</h3>
-        <p>Implemented end-to-end encryption and firewall protocols for a regional financial consultancy firm.</p>
+        <p>Firewall & encryption implementation for financial firm.</p>
       </div>
       <div class="portfolio-card">
-        <h3>Legacy System Migration</h3>
-        <p>Successfully migrated VB.NET legacy databases to modern cloud-based SQL systems for improved uptime.</p>
+        <h3>Legacy Migration</h3>
+        <p>VB.NET databases upgraded to modern SQL cloud systems.</p>
       </div>
     </div>
   </div>
@@ -125,27 +227,15 @@
     <div class="cards">
       <div class="card">
         <h3>IT Support</h3>
-        <ul>
-          <li>Remote & on-site technical support</li>
-          <li>System troubleshooting</li>
-          <li>Email & Cloud configuration</li>
-        </ul>
+        <p>Remote & on-site troubleshooting and cloud configuration.</p>
       </div>
       <div class="card">
         <h3>Software Development</h3>
-        <ul>
-          <li>Business Automation & VB.NET Legacy Fixes</li>
-          <li>Custom Web Apps & Dashboards</li>
-          <li>Inventory & Revenue Tools</li>
-        </ul>
+        <p>Custom web apps, automation & dashboards.</p>
       </div>
       <div class="card">
         <h3>Cybersecurity</h3>
-        <ul>
-          <li>24/7 Threat Detection</li>
-          <li>Malware Removal & Recovery</li>
-          <li>Firewall & Endpoint Protection</li>
-        </ul>
+        <p>24/7 threat detection, malware removal & protection.</p>
       </div>
     </div>
   </div>
@@ -153,22 +243,19 @@
 
 <section id="pricing" class="section light">
   <div class="container">
-    <h2 class="section-title">Affordable Pricing</h2>
+    <h2 class="section-title">Pricing</h2>
     <div class="cards">
       <div class="card">
-        <h3>Starter Support</h3>
-        <h4>$80 / Mo</h4>
-        <p>Remote troubleshooting & Business hours support.</p>
+        <h3>Starter</h3>
+        <p>$80 / Month</p>
       </div>
       <div class="card">
-        <h3>Growth Support</h3>
-        <h4>$150 / Mo</h4>
-        <p>Includes maintenance, security checks & priority response.</p>
+        <h3>Growth</h3>
+        <p>$150 / Month</p>
       </div>
       <div class="card">
         <h3>Custom Software</h3>
-        <h4>From $300</h4>
-        <p>Tailored solutions for your specific business needs.</p>
+        <p>From $300</p>
       </div>
     </div>
   </div>
@@ -177,34 +264,32 @@
 <section id="contact" class="section">
   <div class="container">
     <h2 class="section-title">Contact Us</h2>
-    
-    <div class="contact-info-box">
-
 
     <form action="https://formspree.io/f/xzdajgyz" method="POST" class="contact-form">
       <input type="text" name="name" placeholder="Full Name" required>
       <input type="email" name="email" placeholder="Email Address" required>
       <textarea name="message" placeholder="How can we help your business today?" rows="5" required></textarea>
-      <input type="hidden" name="_to" value="technovaphy3@gmail.com">
       <button type="submit" class="btn primary">Send Message</button>
     </form>
-  </div>
-          <p><strong>Phone:</strong> </p>"0799269573"
-      <p><strong>Email:</strong> </p>"technovaphysolutions3@gmail.com"
+
+    <div class="contact-info-box">
+      <p><strong>Phone:</strong> <a href="tel:+254799269573">0799 269 573</a></p>
+      <p><strong>Email:</strong> <a href="mailto:technovaphysolutions3@gmail.com?subject=Business%20Inquiry">technovaphysolutions3@gmail.com</a></p>
       <p><em>Available for local (Nairobi).</em></p>
+    </div>
+
   </div>
 </section>
 
-</main>
-
-<a href="https://wa.me/254799269573?text=Hi%20TechNovaphy%2C%20I%20am%20interested%20in%20your%20services." class="whatsapp-float" target="_blank">
-  <span>Chat on WhatsApp</span>
+<a href="https://wa.me/254799269573?text=Hi%20TechNovaphy%2C%20I%20am%20interested%20in%20your%20services." 
+   class="whatsapp-float" 
+   target="_blank" 
+   rel="noopener">
+   Chat on WhatsApp
 </a>
 
 <footer>
-  <div class="container" style="text-align: center; padding: 20px;">
-    <p>&copy; 2026 TechNovaphy Solutions. Nairobi, Kenya.</p>
-  </div>
+  &copy; 2026 TechNovaphy Solutions. Nairobi, Kenya.
 </footer>
 
 <script>
@@ -229,6 +314,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
-
-
-
